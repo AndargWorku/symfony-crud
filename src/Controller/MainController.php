@@ -42,7 +42,7 @@ class MainController extends AbstractController
 
 
 
-     #[Route('/update/${id}', name:'update')]
+     #[Route("/update/{id}", name:"update")]
      public function update(Request $request, $id ){
         $crud= $this->getDoctrine()->getRepository(Crud::class)->find($id);
         $form= $this->createForm(CrudType::class, $crud);
